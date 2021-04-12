@@ -46,5 +46,44 @@
         </tr>
       </tbody>
     </table>
+
+    <!-- Scripts -->
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">localhost:3001 (scripts from a 2nd server)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>No headers</td>
+          <td>
+            <span>-</span>
+            <script src="http://localhost:3001/no-headers.js"></script>
+          </td>
+        </tr>
+        <tr>
+          <td>Cross-Origin-Resource-Policy: same-site</td>
+          <td>
+            <span>-</span>
+            <script src="http://localhost:3001/corp-same-site.js"></script>
+          </td>
+        </tr>
+        <tr>
+          <td>Cross-Origin-Resource-Policy: same-domain</td>
+          <td>
+            <span>-</span>
+            <script src="http://localhost:3001/corp-same-domain.js"></script>
+          </td>
+        </tr>
+        <tr>
+          <td>Cross-Origin-Resource-Policy: cross-origin</td>
+          <td>
+            <span>-</span>
+            <script src="http://localhost:3001/corp-cross-origin.js"></script>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
