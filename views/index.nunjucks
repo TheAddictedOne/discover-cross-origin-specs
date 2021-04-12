@@ -8,8 +8,12 @@
   <body>
     <header>
       <h1>localhost:3000</h1>
-      <h2>Cross-Origin-Embedder-Policy: require-corp</h2>
-      <h2>Cross-Origin-Opener-Policy: same-site</h2>
+      {% if noHeaders %}
+        <h2>No cross-origin headers</h2>
+      {% else %}
+        <h2>Cross-Origin-Embedder-Policy: require-corp</h2>
+        <h2>Cross-Origin-Opener-Policy: same-site</h2>
+      {% endif %}
     </header>
 
     <!-- Images -->

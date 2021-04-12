@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const nunjucks = require('nunjucks')
 
 const PORT = 3000
 const COEP = 'Cross-Origin-Embedder-Policy'
@@ -9,15 +10,25 @@ const COOP_SAMEORIGIN = 'same-origin'
 
 const ARGV_NOHEADERS = '--no-headers'
 
-let setHeaders = (res) => {
-  res.set(COEP, COEP_REQUIRECORP)
-  res.set(COOP, COOP_SAMEORIGIN)
-}
+const noHeaders = process.argv.includes(ARGV_NOHEADERS)
 
-if (process.argv.includes(ARGV_NOHEADERS)) {
-  setHeaders = () => {}
-}
+const setHeaders = noHeaders
+  ? () => {}
+  : (res) => {
+    res.set(COEP, COEP_REQUIRECORP)
+    res.set(COOP, COOP_SAMEORIGIN)
+  }
 
-app.use(express.static('docs', { setHeaders }))
+app.use(express.static('static', { setHeaders }))
 
-app.listen(PORT, () => console.log(`Example app listening at http://localhost:${PORT}`))
+nunjucks.configure('views', {
+    autoescape: true,
+    express: app
+})
+
+app.use('/', (req, res) => {
+  setHeaders(res)
+  res.render('index.nunjucks', { noHeaders })
+})
+
+app.listen(PORT, () => console.log(`Server: http://localhost:${PORT} with noHeaders: ${noHeaders}`))
