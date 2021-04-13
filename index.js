@@ -23,7 +23,8 @@ app.use(express.static('static', { setHeaders }))
 
 nunjucks.configure('views', {
     autoescape: true,
-    express: app
+    express: app,
+    noCache: true,
 })
 
 app.use('/', (req, res) => {

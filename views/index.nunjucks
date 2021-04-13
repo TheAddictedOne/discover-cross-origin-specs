@@ -89,5 +89,90 @@
         </tr>
       </tbody>
     </table>
+
+    <!-- Iframes without COEP -->
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">
+            <div>localhost:3001 (iframes embedding pages from 2nd server)</div>
+            <div>Not working because no COEP header</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>No headers</td>
+          <td>
+            <iframe src="http://localhost:3001/iframe-no-headers.html"></iframe>
+          </td>
+        </tr>
+        <tr>
+          <td>Cross-Origin-Resource-Policy: same-site</td>
+          <td>
+            <iframe src="http://localhost:3001/iframe-corp-same-site.html"></iframe>
+          </td>
+        </tr>
+        <tr>
+          <td>Cross-Origin-Resource-Policy: same-domain</td>
+          <td>
+            <iframe src="http://localhost:3001/iframe-corp-same-domain.html"></iframe>
+          </td>
+        </tr>
+        <tr>
+          <td>Cross-Origin-Resource-Policy: cross-origin</td>
+          <td>
+            <iframe src="http://localhost:3001/iframe-corp-cross-origin.html"></iframe>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Iframes with COEP -->
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">
+            <div>localhost:3001 (iframes embedding pages from 2nd server)</div>
+            <div>Cross-Origin-Embedder-Policy: require-corp</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cross-Origin-Embedder-Policy: require-corp</td>
+          <td>
+            <iframe src="http://localhost:3001/coep-no-headers.html"></iframe>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>Cross-Origin-Embedder-Policy: require-corp</div>
+            <div>Cross-Origin-Resource-Policy: same-site</div>
+          </td>
+          <td>
+            <iframe src="http://localhost:3001/iframe-corp-same-site.html"></iframe>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>Cross-Origin-Embedder-Policy: require-corp</div>
+            <div>Cross-Origin-Resource-Policy: same-domain</div>
+          </td>
+          <td>
+            <iframe src="http://localhost:3001/coep-corp-same-domain.html"></iframe>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>Cross-Origin-Embedder-Policy: require-corp</div>
+            <div>Cross-Origin-Resource-Policy: cross-origin</div>
+          </td>
+          <td>
+            <iframe src="http://localhost:3001/coep-corp-cross-origin.html"></iframe>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>

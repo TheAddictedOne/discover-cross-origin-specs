@@ -37,3 +37,7 @@ td:first-child {
 img {
   height: 200px;
 }
+iframe {
+  border: 1px solid black;
+  width: 100%;
+}
