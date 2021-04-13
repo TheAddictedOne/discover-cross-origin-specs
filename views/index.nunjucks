@@ -142,7 +142,7 @@
         <tr>
           <td>Cross-Origin-Embedder-Policy: require-corp</td>
           <td>
-            <iframe src="http://localhost:3001/coep-no-headers.html"></iframe>
+            <iframe src="http://localhost:3001/coep-no-corp.html"></iframe>
           </td>
         </tr>
         <tr>
@@ -151,7 +151,7 @@
             <div>Cross-Origin-Resource-Policy: same-site</div>
           </td>
           <td>
-            <iframe src="http://localhost:3001/iframe-corp-same-site.html"></iframe>
+            <iframe src="http://localhost:3001/coep-corp-same-site.html"></iframe>
           </td>
         </tr>
         <tr>
