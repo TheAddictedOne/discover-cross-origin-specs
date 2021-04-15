@@ -23,10 +23,12 @@ const setHeaders = noHeaders
 
 app.use(express.static('static', { setHeaders }))
 
+// Nunjucks = template engine (https://mozilla.github.io/nunjucks/)
+// Equivalent to Twig for Node.js
 nunjucks.configure('views', {
-    autoescape: true,
-    express: app,
-    noCache: true,
+  autoescape: true,
+  express: app,
+  noCache: true,
 })
 
 app.use('/dm', (req, res) => {
@@ -38,4 +40,4 @@ app.use('/', (req, res) => {
   res.render('index.nunjucks', { noHeaders })
 })
 
-app.listen(PORT, () => console.log(`Server: http://localhost:${PORT} with noHeaders: ${noHeaders}`))
+app.listen(PORT, () => console.log(`Server: http://localhost:${PORT} with ${noHeaders ? 'no headers' : 'specific COOP/COEP headers'}`))
