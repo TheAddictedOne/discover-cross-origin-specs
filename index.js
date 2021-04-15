@@ -6,6 +6,8 @@ const PORT = 3000
 const COEP = 'Cross-Origin-Embedder-Policy'
 const COEP_REQUIRECORP = 'require-corp'
 const COOP = 'Cross-Origin-Opener-Policy'
+const COOP_UNSAFENONE = 'unsafe-none'
+const COOP_ALLOWPOPUPS = 'same-origin-allow-popups'
 const COOP_SAMEORIGIN = 'same-origin'
 
 const ARGV_NOHEADERS = '--no-headers'
@@ -27,6 +29,10 @@ nunjucks.configure('views', {
     noCache: true,
 })
 
+app.use('/dm', (req, res) => {
+  setHeaders(res)
+  res.render('dailymotion.nunjucks')
+})
 app.use('/', (req, res) => {
   setHeaders(res)
   res.render('index.nunjucks', { noHeaders })

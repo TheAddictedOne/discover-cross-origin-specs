@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Discover: cross-origin specs, DM</title>
+    <link rel="stylesheet" href="./coop-coep.css">
+  </head>
+  <body>
+    <iframe src="https://www.dailymotion.com/embed/video/x7xgg57"></iframe>
+  </body>
+</html>
